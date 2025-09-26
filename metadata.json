@@ -1,0 +1,6 @@
+{
+  "name": "Job Application Tracker AI",
+  "description": "An application to keep track of job applications and use AI to generate customized resumes for each job.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
