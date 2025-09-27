@@ -1,74 +1,84 @@
-# AI-Powered Web Application
+# Job Application Tracker
 
-This repository contains everything you need to run and deploy your AI-powered application locally or in production.
-
----
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Run Locally](#run-locally)
-- [Deploy to Netlify](#deploy-to-netlify)
-- [Environment Variables](#environment-variables)
-- [License](#license)
-
+A simple, AI-assisted web app to help you manage your job applications, interviews, and notes in one place. Built with **React + TypeScript + Vite**, it supports authentication, job tracking, and smart organization for candidates navigating multiple applications.
 
 ---
 
-## Introduction
-
-This project is a modern web application built with JavaScript and powered by AI services. It includes local development support and a ready-to-deploy structure for Netlify hosting.
+## 🚀 Features
+- 📋 **Track applications** – add, edit, and delete jobs with title, company, and stage  
+- 🏷️ **Status pipeline** – organize jobs by stage (Applied, Interview, Offer, Rejected)  
+- 🔍 **Search & filter** – quickly find jobs by company, role, or tags  
+- 🗒️ **Notes** – attach interview prep notes to each application  
+- 📂 **Import/Export** – backup or migrate your application data with CSV  
+- 🔐 **Secure login** – Google OAuth for authentication (optional)  
+- ⚡ **AI integration** – experiment with Gemini API to generate interview prep suggestions  
 
 ---
 
-## Run Locally
+## 🛠️ Tech Stack
+- **Frontend**: React, TypeScript, Vite, TailwindCSS  
+- **Backend/Services**: Node.js, Express (planned integrations)  
+- **Authentication**: Google OAuth 2.0  
+- **Cloud/Hosting**: Netlify / Vercel  
+- **Testing/Quality**: ESLint, Prettier (with CI build + lint pipeline)  
 
-**Prerequisites:**  
-- [Node.js](https://nodejs.org)
+---
 
-### Steps
+## 🏗️ Architecture
+```
+React (Vite) ───> Express API ───> Database (future)
+       │
+       └── Google OAuth / AI APIs (Gemini)
+```
 
-1. Install dependencies:
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+- Node.js 18+  
+- npm or yarn  
+
+### Setup
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/PraveenSalapu/JobApplicationTracker.git
+   cd JobApplicationTracker
+   ```
+2. **Install dependencies**
    ```bash
    npm install
-2. Create a .env.local file in the root of the project and add your environment variables:
+   ```
+3. **Create `.env` file** (see `.env.example`)  
 
-   GEMINI_API_KEY=your-gemini-key
-   VITE_GOOGLE_CLIENT_ID=your-google-oauth-client-id
-   VITE_GOOGLE_API_KEY=your-google-api-key
+   | Variable | Description | Required |
+   |----------|-------------|----------|
+   | `VITE_GOOGLE_CLIENT_ID` | Google OAuth Client ID | ✅ |
+   | `VITE_GEMINI_API_KEY`   | Gemini API Key (optional, for AI notes) | ⬜ |
+   | `VITE_BACKEND_URL`      | Backend API endpoint | ⬜ |
 
-3. Start the development server:
+4. **Run the app locally**
    ```bash
    npm run dev
-The app should now be running at http://localhost:5173 (or another port depending on your setup).
+   ```
+5. Open [http://localhost:5173](http://localhost:5173)  
 
-4. Deploy to Netlify
+---
 
-   To deploy this application on Netlify:
+## 🌐 Demo
+- **Live Demo**: http://basicinterviewprep.netlify.app/
+- Currently available with personal email. 
 
-   Push your code to a Git repository (excluding any sensitive .env files).
+---
 
-   In your Netlify dashboard, go to: Site settings → Build & deploy → Environment
-   
-   Add the following environment variables:
+## 📌 Roadmap
+- [ ] Kanban board for job stages  
+- [ ] Interview reminders + calendar integration  
+- [ ] AI-powered job description analysis  
+- [ ] Persistent backend with database (MongoDB/Postgres)  
 
-   GEMINI_API_KEY
+---
 
-   VITE_GOOGLE_CLIENT_ID
+## 🤝 Contributing
+Contributions are welcome! Please fork, create a feature branch, and submit a PR.  
 
-   VITE_GOOGLE_API_KEY
-
-   Trigger a new deploy from the dashboard.
-
-   🔁 If you rotate any credentials, make sure to update them in the dashboard and redeploy your site.
-
-## Environment Variables
-
-| Variable Name            | Description                          |
-|--------------------------|--------------------------------------|
-| `GEMINI_API_KEY`         | API key for Gemini AI services       |
-| `VITE_GOOGLE_CLIENT_ID`  | Google OAuth client ID               |
-| `VITE_GOOGLE_API_KEY`    | Google API key for client access     |
-
-
-Let me know if you’d like to add badges, a Features list, or a Troubleshooting section.
